@@ -6,9 +6,13 @@ import MenuAdmin from "./MenuAdmin";
 import sampleBurgers from "../sample-burgers"
 import Burger from "./Burger";
 import { database, ref, onValue, set, off } from "../firebase";
-
+import PropTypes from "prop-types";
 
 class App extends React.Component{
+
+    static propTypes = {
+        match: PropTypes.object,
+    }
 
     state={
         burgers: {},
