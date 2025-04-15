@@ -7,7 +7,9 @@ import sampleBurgers from "../sample-burgers"
 import Burger from "./Burger";
 import { database, ref, onValue, set, off } from "../firebase";
 
+
 class App extends React.Component{
+
     state={
         burgers: {},
         order: {},
@@ -23,13 +25,13 @@ class App extends React.Component{
         }
 
         
-        if (this.unsubscribe) {
-          this.unsubscribe();
+        if (this.burgersListener) {
+            off(this.burgersListener);
         }
           
-        this.unsubscribe = onValue(burgersRef, (snapshot) => {
-          const data = snapshot.val();
-          this.setState({ burgers: data || {} });
+        this.burgersListener = onValue(burgersRef, (snapshot) => {
+            const data = snapshot.val();
+            this.setState({ burgers: data || {} });
         });
     }
 
@@ -39,10 +41,9 @@ class App extends React.Component{
     }
 
     componentWillUnmount() {
-      if (this.unsubscribe && typeof this.unsubscribe === 'function') {
-        this.unsubscribe();
-      }
-      this.unsubscribe = null;
+        if (this.burgersListener) {
+            off(this.burgersListener);
+        }
     }
 
     writeBurgersToDatabase = () => {
