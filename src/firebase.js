@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import { getAuth, signOut, GithubAuthProvider, signInWithPopup, onAuthStateChanged } from "firebase/auth";
 import { getDatabase, ref, onValue, set, off } from "firebase/database";
 
 const firebaseConfig = {
@@ -9,5 +10,18 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
+const auth = getAuth(app);
 
-export { app, database, ref, onValue, set, off };
+export { 
+  app,
+  auth,
+  database,
+  ref,
+  onValue,
+  set,
+  off,
+  GithubAuthProvider,
+  signInWithPopup,
+  onAuthStateChanged,
+  signOut,
+};

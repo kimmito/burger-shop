@@ -13,7 +13,6 @@ class Burger extends React.Component{
         }),
         index: PropTypes.string,
         addToOrder: PropTypes.func,
-        
     }
 
     render(){

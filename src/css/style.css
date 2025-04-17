@@ -1,49 +1,42 @@
 .order-enter {
-  -webkit-transition: 0.5s;
   transition: 0.5s;
-  -webkit-transform: translateX(-120%);
-          transform: translateX(-120%);
+  transform: translateX(-120%);
   max-height: 0;
 }
 .order-enter.order-enter-active {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  transform: translateX(0);
   max-height: 60px;
   padding: 2rem 0 !important;
 }
 .order-exit {
-  -webkit-transition: 0.5s;
   transition: 0.5s;
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  transform: translateX(0);
 }
 .order-exit.order-exit-active {
-  -webkit-transform: translateX(120%);
-          transform: translateX(120%);
+  transform: translateX(120%);
   padding: 0;
 }
+span.count {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
 .count-enter {
-  -webkit-transition: 0.5s;
   transition: 0.5s;
-  -webkit-transform: translateY(100%);
-          transform: translateY(100%);
+  transform: translateY(100%);
 }
 .count-enter.count-enter-active {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  transform: translateY(0);
 }
 .count-exit {
-  -webkit-transition: 0.5s;
   transition: 0.5s;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  transform: translateY(0);
   position: absolute;
   left: 0;
   bottom: 0;
 }
 .count-exit.count-exit-active {
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
+  transform: translateY(-100%);
 }
 article,
 aside,
@@ -243,7 +236,6 @@ header.top {
 }
 header.top .wrap {
   height: 100%;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(61,26,22,0)), to(rgba(61,26,22,0.6)));
   background-image: linear-gradient(to bottom, rgba(61,26,22,0), rgba(61,26,22,0.6));
 }
 header.top .header-content {
@@ -253,11 +245,9 @@ header.top .header-content {
 header.top .header-content .header-rating {
   padding: 4px 8px;
   background-color: #ffe033;
-  display: -webkit-inline-box;
   display: inline-flex;
   border-radius: 18px;
-  -webkit-box-align: center;
-          align-items: center;
+  align-items: center;
   font-size: 1.4rem;
 }
 header.top .header-content .header-rating .header-rating_tag {
@@ -316,13 +306,10 @@ ul {
 ul.order li {
   border-bottom: 1px solid #000;
   padding: 2rem 0 2rem 0.2rem;
-  display: -webkit-box;
   display: flex;
   font-size: 1.4rem;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
 ul.order li button {
   border: 0;
@@ -378,7 +365,6 @@ ul.order li span.count span {
   margin-bottom: 20px;
   border: 2px solid #000;
   overflow: hidden;
-  display: -webkit-box;
   display: flex;
   flex-wrap: wrap;
   max-width: 450px;
@@ -394,7 +380,6 @@ ul.order li span.count span {
   border-bottom: 1px solid #000;
   border-right: 1px solid #000;
   -webkit-appearance: none;
-     -moz-appearance: none;
           appearance: none;
   border-radius: 0;
   background: #fff;
@@ -436,17 +421,13 @@ ul.order li span.count span {
 }
 .menu-burger .burger-name {
   margin: 0;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
 .menu-burger .price {
   font-size: 1.4rem;
-  -webkit-box-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
   font-family: 'Open Sans', sans-serif;
 }
 .menu-burger img {
@@ -455,8 +436,7 @@ ul.order li span.count span {
   object-fit: cover;
 }
 .buttonOrder {
-  -webkit-transform: skew(-2deg);
-          transform: skew(-2deg);
+  transform: skew(-2deg);
 }
 button,
 input[type=submit] {
@@ -468,7 +448,6 @@ input[type=submit] {
   font-size: 1.4rem;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 600;
-  -webkit-transition: all 0.2s;
   transition: all 0.2s;
   position: relative;
   z-index: 2;
@@ -477,8 +456,7 @@ button[disabled],
 input[type=submit][disabled] {
   color: #d12028;
   background: #fff;
-  -webkit-transform: rotate(-10deg) scale(1.5) translateX(40%) translateY(-50%);
-          transform: rotate(-10deg) scale(1.5) translateX(40%) translateY(-50%);
+  transform: rotate(-10deg) scale(1.5) translateX(40%) translateY(-50%);
   border: 1px solid #d12028;
 }
 button[disabled]:hover,
@@ -501,7 +479,6 @@ input[type=submit]:after {
   height: 100%;
   left: 0;
   top: 0;
-  -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
 button:hover,
@@ -542,12 +519,9 @@ input[type=submit].github {
   margin: 200px auto 0;
 }
 .login-header {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
 }
 .login-header .avatar {
@@ -556,7 +530,6 @@ input[type=submit].github {
   border: 2px solid rgba(255,255,255,0.4);
   border-radius: 50%; /* relative value */
   box-shadow: 0px 0px 5px rgba(0,0,0,0.4);
-  -webkit-transition: linear 0.25s;
   transition: linear 0.25s;
   height: 50px;
   width: 50px;
@@ -577,10 +550,8 @@ input[type=submit].github {
 .restaurant_select_top {
   position: relative;
   max-width: 380px;
-  display: -webkit-box;
   display: flex;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 .restaurant_select_top-header {
   font-size: 2.4rem;
