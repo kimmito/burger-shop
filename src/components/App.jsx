@@ -1,23 +1,25 @@
 import React from "react";
-import { withRouter } from "../utils/withRouter";
+import { useParams } from "react-router-dom";
 import Header from "./Header";
 import Order from "./Order";
 import MenuAdmin from "./MenuAdmin";
 import sampleBurgers from "../sample-burgers"
 import Burger from "./Burger";
 import { database, ref, onValue, set, off } from "../firebase";
-import PropTypes from "prop-types";
 
+
+
+const AppWrapper = () => {
+    const params = useParams();
+    return <App params={params} />;
+};
 class App extends React.Component{
-
-    static propTypes = {
-        match: PropTypes.object,
-    }
-
     state={
         burgers: {},
         order: {},
     };
+
+    burgersListener = null;
 
     componentDidMount() {
         const { restaurantId } = this.props.params;
@@ -26,11 +28,6 @@ class App extends React.Component{
         const localStorageRef = localStorage.getItem(restaurantId);
         if(localStorageRef){
             this.setState({order: JSON.parse(localStorageRef) })
-        }
-
-        
-        if (this.burgersListener) {
-            off(this.burgersListener);
         }
           
         this.burgersListener = onValue(burgersRef, (snapshot) => {
@@ -46,7 +43,7 @@ class App extends React.Component{
 
     componentWillUnmount() {
         if (this.burgersListener) {
-            off(this.burgersListener);
+            off(ref(database), this.burgersListener);
         }
     }
 
@@ -98,7 +95,6 @@ class App extends React.Component{
 
     render(){
         return(
-            
             <div className="burger-paradise">
                 <div className="menu">
                     <Header title="Very Hot Burgers"/>
@@ -111,8 +107,9 @@ class App extends React.Component{
                 <Order deleteFromOrder={this.deleteFromOrder} burgers={this.state.burgers} order={this.state.order}/>
                 <MenuAdmin deleteBurger={this.deleteBurger} addBurger={this.addBurger} loadSampleBurgers={this.loadSampleBurgers} burgers={this.state.burgers} updateBurger={this.updateBurger}/>
             </div>
+
         )
     }
 }
 
-export default withRouter(App);
+export default AppWrapper;
