@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3f20a896.css",
+    "main.js": "/static/js/main.472ce1e5.js",
+    "static/media/burger-logo-4.jpg": "/static/media/burger-logo-4.e5f3a7abdcd383ba5d38.jpg",
+    "static/media/down.svg": "/static/media/down.181249c9953960bf37a1.svg",
+    "static/media/up.svg": "/static/media/up.e0f0419c891b60413a4c.svg",
+    "index.html": "/index.html",
+    "main.3f20a896.css.map": "/static/css/main.3f20a896.css.map",
+    "main.472ce1e5.js.map": "/static/js/main.472ce1e5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3f20a896.css",
+    "static/js/main.472ce1e5.js"
+  ]
+}
