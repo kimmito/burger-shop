@@ -40,7 +40,7 @@ class SignIn extends React.Component {
 
     render(){
         if (!this.state.user){
-            return <Login authenticate={this.authenticate}/>
+            return <Login changeGuestStatus={this.props.changeGuestStatus} isGuest={this.props.isGuest} authenticate={this.authenticate}/>
         }
         return this.props.children;
     }

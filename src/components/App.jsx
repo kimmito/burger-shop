@@ -17,6 +17,7 @@ class App extends React.Component {
     state = {
         burgers: {},
         order: {},
+        isGuest: false,
     };
 
     burgersListener = null;
@@ -99,9 +100,14 @@ class App extends React.Component {
         window.location.reload();
     };
 
+    changeGuestStatus = () => {
+        this.setState(prevState => ({
+            isGuest: !prevState.isGuest
+        }));
+    };
+
     render() {
         return (
-            <SignIn>
                 <div className="burger-paradise">
                     <div className="menu">
                         <Header title="Very Hot Burgers" />
@@ -121,16 +127,18 @@ class App extends React.Component {
                         burgers={this.state.burgers}
                         order={this.state.order}
                     />
-                    <MenuAdmin
+                    <SignIn changeGuestStatus={this.changeGuestStatus} isGuest={this.state.isGuest}>
+                        <MenuAdmin
                         deleteBurger={this.deleteBurger}
                         addBurger={this.addBurger}
                         loadSampleBurgers={this.loadSampleBurgers}
                         burgers={this.state.burgers}
                         updateBurger={this.updateBurger}
                         handleLogout={this.handleLogout}
-                    />
+                        />
+                    </SignIn>
                 </div>
-            </SignIn>
+
         );
     }
 }
