@@ -38,27 +38,37 @@ header.top
       color: #FF0000
 
 .burger-paradise
-  display grid
-  grid-template-columns: 2fr 1fr 1.5fr;
-  grid-gap: 10px;
+  display flex
   height 94vh
   max-width:1500px
   margin 0 auto
   margin-top 2vh
   & > *
-    overflow-y scroll
+    overflow-y auto
     overflow-x hidden
     border: solid 1px #eeeeee
     &:first-child
+      display flex 
+      flex-direction column
+      max-width 30vw;
       background #ededed
     &:nth-child(2)
       padding 2rem 0
       overflow-y hidden
       background #f2f2f2
       border-radius: 4px;
+      width 30vw;
+      margin: 0 10px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
     &:last-child
+      width 30vw
       background #ededed
       padding 2rem
+
+.login-container
+  margin 0
 
 ul
   list-style none
@@ -235,7 +245,6 @@ button, input[type=submit]
 
 .login-container
   max-width: 400px;
-  margin: 200px auto 0;
 .login-header {
   display: flex;
   justify-content: space-between;
